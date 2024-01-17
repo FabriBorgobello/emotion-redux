@@ -1,14 +1,14 @@
-import { Button } from '@/components/ui/button';
-import { AppDispatch } from '@/store';
-import { useDispatch } from 'react-redux';
-import { addTask } from '@/slices/task-slice';
-import { CategoryCombobox } from './category-combobox';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormProvider, useForm } from 'react-hook-form';
-import { TaskInputType, taskInputSchema } from '@/schemas/task-schema';
-import { TaskInput } from './task-input';
-import { CATEGORIES } from '@/constants';
-import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import { AppDispatch } from "@/store";
+import { useDispatch } from "react-redux";
+import { addTask } from "@/slices/task-slice";
+import { CategoryCombobox } from "./category-combobox";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormProvider, useForm } from "react-hook-form";
+import { TaskInputType, taskInputSchema } from "@/schemas/task-schema";
+import { TaskInput } from "./task-input";
+import { CATEGORIES } from "@/constants";
+import { motion } from "framer-motion";
 
 export function TaskForm() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,7 +17,7 @@ export function TaskForm() {
     resolver: zodResolver(taskInputSchema),
     defaultValues: {
       category: CATEGORIES[0],
-      title: '',
+      title: "",
     },
   });
 
@@ -30,11 +30,11 @@ export function TaskForm() {
       <motion.form
         layout
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-full max-w-md"
+        className="w-full max-w-md space-y-4"
       >
         <TaskInput name="title" />
         <CategoryCombobox name="category" />
-        <Button className="rounded w-full" type="submit">
+        <Button className="w-full rounded" type="submit">
           Add Task
         </Button>
       </motion.form>

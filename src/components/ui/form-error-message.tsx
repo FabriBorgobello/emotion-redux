@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export function FormErrorMessage({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export function FormErrorMessage({ children }: { children: React.ReactNode }) {
       transition={{ duration: 0.1 }}
       className="mt-3"
     >
-      <p className="text-sm text-red-500 font-semibold">{children}</p>
+      <p className="text-sm font-semibold text-red-500">{children}</p>
     </motion.div>
   );
 }

@@ -1,21 +1,21 @@
-import { capitalize, cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { capitalize, cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from '@/components/ui/command';
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
-import * as React from 'react';
-import { CATEGORIES } from '@/constants';
-import { Controller, useFormContext } from 'react-hook-form';
+} from "@/components/ui/popover";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import * as React from "react";
+import { CATEGORIES } from "@/constants";
+import { Controller, useFormContext } from "react-hook-form";
 
 export function CategoryCombobox({ name }: { name: string }) {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +34,7 @@ export function CategoryCombobox({ name }: { name: string }) {
               aria-expanded={open}
               className="w-full text-left"
             >
-              {field.value ? capitalize(field.value) : 'Select category'}
+              {field.value ? capitalize(field.value) : "Select category"}
               <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
@@ -55,8 +55,8 @@ export function CategoryCombobox({ name }: { name: string }) {
                     {capitalize(category)}
                     <CheckIcon
                       className={cn(
-                        'ml-auto h-4 w-4',
-                        field.value === category ? 'opacity-100' : 'opacity-0',
+                        "ml-auto h-4 w-4",
+                        field.value === category ? "opacity-100" : "opacity-0",
                       )}
                     />
                   </CommandItem>
