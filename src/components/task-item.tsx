@@ -1,9 +1,11 @@
-import { Task } from '@/slices/task.slice';
-import { removeTask, toggleTask } from '@/slices/task.slice';
+import { removeTask, toggleTask } from '@/slices/task-slice';
 import { motion } from 'framer-motion';
 import { AppDispatch } from '@/store';
 import { DeleteButton } from './delete-button';
 import { Button } from './ui/button';
+import { Task } from '@/types';
+import { Badge } from '@/components/ui/badge';
+import { capitalize } from '@/lib/utils';
 
 interface TaskItemProps {
   task: Task;
@@ -21,11 +23,12 @@ export function TaskItem({ task, dispatch }: TaskItemProps) {
         y: 0,
       }}
       exit={{ opacity: 0, y: -50 }}
-      className="flex items-center space-x-4 justify-between p-4 bg-white rounded shadow"
+      className="flex items-center p-4 bg-white rounded shadow"
     >
-      <span className="text-lg  w-full relative flex items-center">
+      <span className="text-lg relative flex items-center">
         <CompletedLine isCompleted={task.completed} />
         {task.title}
+        <Badge className="ml-2">{capitalize(task.category)}</Badge>
       </span>
       <TaskItemActions task={task} dispatch={dispatch} />
     </motion.li>
@@ -45,7 +48,7 @@ export function CompletedLine({ isCompleted }: { isCompleted: boolean }) {
 
 export function TaskItemActions({ task, dispatch }: TaskItemProps) {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 ml-auto">
       <Button
         size="sm"
         variant={'outline'}

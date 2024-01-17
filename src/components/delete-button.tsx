@@ -10,6 +10,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Button } from './ui/button';
+import { TrashIcon } from '@radix-ui/react-icons';
 
 export function DeleteButton({
   onClick,
@@ -20,7 +21,7 @@ export function DeleteButton({
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button size="sm" variant="destructive">
-          Delete
+          <TrashIcon className="h-4 w-4" />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

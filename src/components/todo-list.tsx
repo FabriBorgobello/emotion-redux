@@ -9,14 +9,14 @@ export function TodoList() {
 
   if (!tasks.length) {
     return (
-      <div className="flex flex-col items-center justify-center w-full h-[100px]">
+      <div className="mt-16 max-w-md flex flex-col items-center justify-center w-full h-[100px] bg-gray-200 rounded-md">
         <p className="text-2xl">No tasks</p>
       </div>
     );
   }
 
   return (
-    <ul className="w-full max-w-md mt-8 space-y-2 flex flex-col">
+    <ul className="w-full max-w-md mt-16 space-y-2 flex flex-col">
       <AnimatePresence>
         {tasks.map((task) => (
           <TaskItem key={task.id} task={task} dispatch={dispatch} />

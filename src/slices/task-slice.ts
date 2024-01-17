@@ -1,10 +1,6 @@
+import { TaskInputType } from '@/schemas/task-schema';
+import { Task } from '@/types';
 import { PayloadAction, createSlice, nanoid } from '@reduxjs/toolkit';
-
-export interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-}
 
 interface TaskState {
   tasks: Task[];
@@ -22,8 +18,13 @@ export const taskSlice = createSlice({
       reducer: (state, action: PayloadAction<Task>) => {
         state.tasks.push(action.payload);
       },
-      prepare: (text: string) => ({
-        payload: { id: nanoid(), title: text, completed: false },
+      prepare: (values: TaskInputType) => ({
+        payload: {
+          id: nanoid(),
+          completed: false,
+          title: values.title,
+          category: values.category,
+        },
       }),
     },
     removeTask: (state, action: PayloadAction<string>) => {
