@@ -1,3 +1,7 @@
+import { TrashIcon } from "@radix-ui/react-icons";
+
+import { Button } from "./ui/button";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,8 +13,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "./ui/button";
-import { TrashIcon } from "@radix-ui/react-icons";
 
 export function DeleteButton({
   onClick,

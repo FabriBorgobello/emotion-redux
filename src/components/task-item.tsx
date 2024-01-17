@@ -1,11 +1,13 @@
-import { removeTask, toggleTask } from "@/slices/task-slice";
 import { motion } from "framer-motion";
-import { AppDispatch } from "@/store";
-import { DeleteButton } from "./delete-button";
+
 import { Button } from "./ui/button";
-import { Task } from "@/types";
+import { DeleteButton } from "./delete-button";
+
 import { Badge } from "@/components/ui/badge";
 import { capitalize } from "@/lib/utils";
+import { removeTask, toggleTask } from "@/slices/task-slice";
+import { AppDispatch } from "@/store";
+import { Task } from "@/types";
 
 interface TaskItemProps {
   task: Task;

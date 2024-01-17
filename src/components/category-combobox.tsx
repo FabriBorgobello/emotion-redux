@@ -1,4 +1,7 @@
-import { capitalize, cn } from "@/lib/utils";
+import * as React from "react";
+import { Controller, useFormContext } from "react-hook-form";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -12,10 +15,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import * as React from "react";
 import { CATEGORIES } from "@/constants";
-import { Controller, useFormContext } from "react-hook-form";
+import { capitalize, cn } from "@/lib/utils";
 
 export function CategoryCombobox({ name }: { name: string }) {
   const [open, setOpen] = React.useState(false);

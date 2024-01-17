@@ -1,7 +1,8 @@
-import { FormErrorMessage } from "./ui/form-error-message";
-import { Input } from "./ui/input";
 import { useFormContext } from "react-hook-form";
 import { motion } from "framer-motion";
+
+import { FormErrorMessage } from "./ui/form-error-message";
+import { Input } from "./ui/input";
 
 export function TaskInput({ name }: { name: string }) {
   const {

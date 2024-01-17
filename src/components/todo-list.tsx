@@ -1,7 +1,9 @@
-import { AppDispatch, RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence } from "framer-motion";
+
 import { TaskItem } from "./task-item";
+
+import { AppDispatch, RootState } from "@/store";
 
 export function TodoList() {
   const tasks = useSelector((state: RootState) => state.task.tasks);

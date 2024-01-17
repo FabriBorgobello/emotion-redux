@@ -1,6 +1,7 @@
+import { createSlice, nanoid,PayloadAction } from "@reduxjs/toolkit";
+
 import { TaskInputType } from "@/schemas/task-schema";
 import { Task } from "@/types";
-import { PayloadAction, createSlice, nanoid } from "@reduxjs/toolkit";
 
 interface TaskState {
   tasks: Task[];

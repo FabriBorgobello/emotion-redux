@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui/button";
-import { AppDispatch } from "@/store";
-import { useDispatch } from "react-redux";
-import { addTask } from "@/slices/task-slice";
-import { CategoryCombobox } from "./category-combobox";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
-import { TaskInputType, taskInputSchema } from "@/schemas/task-schema";
-import { TaskInput } from "./task-input";
-import { CATEGORIES } from "@/constants";
+import { useDispatch } from "react-redux";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
+
+import { CategoryCombobox } from "./category-combobox";
+import { TaskInput } from "./task-input";
+
+import { Button } from "@/components/ui/button";
+import { CATEGORIES } from "@/constants";
+import { taskInputSchema,TaskInputType } from "@/schemas/task-schema";
+import { addTask } from "@/slices/task-slice";
+import { AppDispatch } from "@/store";
 
 export function TaskForm() {
   const dispatch = useDispatch<AppDispatch>();
